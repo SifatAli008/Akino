@@ -70,20 +70,26 @@
           </div>
         {%- elsif variant_style == 'swatch' or block_settings.variant_style == 'buttons' -%}
           {%- assign fieldset_index = forloop.index0 -%}
+          {%- liquid
+            assign option_name_down = product_option.name | downcase
+            assign is_akino_color = false
+            if option_name_down contains 'color' or option_name_down contains 'colour'
+              assign is_akino_color = true
+            endif
+          -%}
           <fieldset
-            class="variant-option variant-option--buttons{% if variant_style == 'swatch' %} variant-option--swatches{% else %} variant-option--{{ settings.variant_button_width }}{% endif %}"
+            class="variant-option variant-option--buttons{% if variant_style == 'swatch' %} variant-option--swatches{% else %} variant-option--{{ settings.variant_button_width }}{% endif %}{% if is_akino_color %} variant-option--akino-color{% endif %}"
             data-fieldset-index="{{ fieldset_index }}"
             ref="fieldsets[]"
             {{ option_id_attribute }}
           >
             <legend>
               {{ product_option.name | escape -}}
-              {%- if variant_style == 'swatch' -%}
+              {%- if variant_style == 'swatch' or is_akino_color -%}
                 <span class="variant-option__swatch-value">{{ product_option.selected_value }}</span>
               {%- endif %}
             </legend>
             {%- liquid
-              assign option_name_down = product_option.name | downcase
               assign force_select_first_size = false
               if request.page_type == 'product' and option_name_down contains 'size'
                 assign selected_size_down = product_option.selected_value | downcase | strip
@@ -116,8 +122,39 @@
               {% if product_option_value.size > longest_value and option_id_attribute %}
                 {% assign longest_value = product_option_value.size %}
               {% endif %}
+              {%- liquid
+                assign color_label = product_option_value.name | default: product_option_value
+                assign color_name = color_label
+                assign color_meta = ''
+                assign color_parts = color_label | split: ' - '
+                if color_parts.size > 1
+                  assign color_name = color_parts.first | strip
+                  assign color_meta = color_parts.last | strip
+                endif
+                assign color_key = color_name | downcase | strip
+                assign swatch_hex = '#888888'
+                if color_key contains 'black'
+                  assign swatch_hex = '#111111'
+                elsif color_key contains 'dark ash' or color_key contains 'ash'
+                  assign swatch_hex = '#6e6e6e'
+                elsif color_key contains 'white' or color_key contains 'off white'
+                  assign swatch_hex = '#f4f1ea'
+                elsif color_key contains 'navy'
+                  assign swatch_hex = '#1b2a4a'
+                elsif color_key contains 'beige' or color_key contains 'cream'
+                  assign swatch_hex = '#d9cdb8'
+                elsif color_key contains 'grey' or color_key contains 'gray'
+                  assign swatch_hex = '#9a9a9a'
+                elsif color_key contains 'red'
+                  assign swatch_hex = '#b42318'
+                elsif color_key contains 'blue'
+                  assign swatch_hex = '#2f5bff'
+                elsif color_key contains 'green'
+                  assign swatch_hex = '#2f6b3a'
+                endif
+              -%}
               <label
-                class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}"
+                class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}{% if is_akino_color %} variant-option__button-label--akino-color{% endif %}"
               >
                 <input
                   type="radio"
@@ -160,6 +197,18 @@
                     variant_image: featured_media,
                     mode: 'unscaled'
                   %}
+                {% elsif is_akino_color %}
+                  <span
+                    class="akino-color-swatch"
+                    style="--akino-swatch: {{ swatch_hex }};"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="akino-color-copy">
+                    <span class="akino-color-copy__name">{{ color_name | escape }}</span>
+                    {% if color_meta != blank %}
+                      <span class="akino-color-copy__meta">{{ color_meta | escape }}</span>
+                    {% endif %}
+                  </span>
                 {% else %}
                   {% if product_option_value.available == true %}
                     <span
