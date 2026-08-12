@@ -1,0 +1,141 @@
+{%- doc -%}
+  Premium product description for PDP accordion.
+  @param {object} [product] - Product object (defaults to closest.product)
+{%- enddoc -%}
+
+{% liquid
+  assign desc_product = product | default: closest.product
+%}
+
+<div class="akino-product-desc">
+  <ul class="akino-product-desc__highlights" role="list">
+    <li>Oversized fit</li>
+    <li>Soft cotton-blend</li>
+    <li>Statement graphic</li>
+    <li>Everyday wear</li>
+  </ul>
+
+  {% if desc_product.description != blank %}
+    <div class="akino-product-desc__body rte">
+      {{ desc_product.description }}
+    </div>
+  {% else %}
+    <div class="akino-product-desc__body rte">
+      <p>A clean oversized drop-shoulder tee with soft cotton-blend comfort and a bold graphic finish.</p>
+    </div>
+  {% endif %}
+
+  {% if desc_product.vendor != blank or desc_product.type != blank %}
+    <dl class="akino-product-desc__meta">
+      {% if desc_product.vendor != blank %}
+        <div class="akino-product-desc__meta-row">
+          <dt>Brand</dt>
+          <dd>{{ desc_product.vendor }}</dd>
+        </div>
+      {% endif %}
+      {% if desc_product.type != blank %}
+        <div class="akino-product-desc__meta-row">
+          <dt>Type</dt>
+          <dd>{{ desc_product.type }}</dd>
+        </div>
+      {% endif %}
+    </dl>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .akino-product-desc {
+    display: grid;
+    gap: 1rem;
+    padding-block: 0.15rem 0.5rem;
+    max-width: 34rem;
+  }
+
+  .akino-product-desc__highlights {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .akino-product-desc__highlights li {
+    margin: 0;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.14);
+    background: rgb(var(--color-foreground-rgb) / 0.03);
+    line-height: 1.2;
+  }
+
+  .akino-product-desc__body {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: rgb(var(--color-foreground-rgb) / 0.82);
+  }
+
+  .akino-product-desc__body > *:first-child {
+    margin-block-start: 0;
+  }
+
+  .akino-product-desc__body > *:last-child {
+    margin-block-end: 0;
+  }
+
+  .akino-product-desc__body p {
+    margin-block: 0 0.85rem;
+  }
+
+  .akino-product-desc__body p:last-child {
+    margin-block-end: 0;
+  }
+
+  .akino-product-desc__body strong,
+  .akino-product-desc__body b {
+    color: var(--color-foreground);
+    font-weight: 600;
+  }
+
+  .akino-product-desc__meta {
+    margin: 0;
+    padding-block-start: 0.85rem;
+    border-block-start: 1px solid rgb(var(--color-foreground-rgb) / 0.1);
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .akino-product-desc__meta-row {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+    font-size: 0.8125rem;
+  }
+
+  .akino-product-desc__meta-row dt {
+    margin: 0;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    opacity: 0.55;
+  }
+
+  .akino-product-desc__meta-row dd {
+    margin: 0;
+    color: rgb(var(--color-foreground-rgb) / 0.88);
+  }
+
+  @media screen and (max-width: 749px) {
+    .akino-product-desc {
+      max-width: none;
+    }
+
+    .akino-product-desc__highlights li {
+      flex: 1 1 calc(50% - 0.45rem);
+      text-align: center;
+    }
+  }
+{% endstylesheet %}

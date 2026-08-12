@@ -1,0 +1,143 @@
+{%- doc -%}
+  Extra meta details for product cards: sizes, colors, sale savings.
+
+  @param {object} product - Product resource
+{%- enddoc -%}
+
+{%- liquid
+  if product == blank
+    assign product = closest.product
+  endif
+
+  assign card_type = product.type | strip
+  assign card_vendor = product.vendor | strip
+  if card_type != blank
+    assign card_eyebrow = card_type
+  else
+    assign card_eyebrow = card_vendor
+  endif
+
+  assign size_option = nil
+  assign color_option = nil
+
+  for option in product.options_with_values
+    assign option_name = option.name | downcase
+    if option_name == 'size' or option_name contains 'size'
+      assign size_option = option
+    elsif option_name == 'color' or option_name == 'colour' or option_name contains 'color' or option_name contains 'colour'
+      assign color_option = option
+    endif
+  endfor
+
+  assign size_labels = ''
+  if size_option != blank
+    for value in size_option.values
+      assign value_label = value | strip | upcase
+      if value_label == 'S'
+        continue
+      endif
+      if value.available == false
+        continue
+      endif
+      if size_labels != blank
+        assign size_labels = size_labels | append: ' · '
+      endif
+      assign size_labels = size_labels | append: value
+    endfor
+  endif
+
+  assign color_count = 0
+  if color_option != blank
+    assign color_count = color_option.values.size
+  endif
+
+  assign save_percent = 0
+  if product.compare_at_price > product.price and product.price > 0
+    assign save_percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round
+  endif
+
+  assign show_meta = false
+  if size_labels != blank or color_count > 0 or save_percent > 0 or product.available == false
+    assign show_meta = true
+  endif
+-%}
+
+{%- if product != blank -%}
+  {%- if card_eyebrow != blank or show_meta -%}
+    <div class="akino-card-meta">
+      {%- if card_eyebrow != blank -%}
+        <p class="akino-card-meta__eyebrow">{{ card_eyebrow }}</p>
+      {%- endif -%}
+
+      {%- if show_meta -%}
+        <div class="akino-card-meta__row">
+          {%- if size_labels != blank -%}
+            <span class="akino-card-meta__sizes">{{ size_labels }}</span>
+          {%- endif -%}
+
+          {%- if color_count > 1 -%}
+            <span class="akino-card-meta__colors">{{ color_count }} colors</span>
+          {%- elsif color_count == 1 and color_option != blank -%}
+            <span class="akino-card-meta__colors">{{ color_option.values.first }}</span>
+          {%- endif -%}
+
+          {%- if save_percent > 0 -%}
+            <span class="akino-card-meta__sale">Save {{ save_percent }}%</span>
+          {%- endif -%}
+
+          {%- unless product.available -%}
+            <span class="akino-card-meta__soldout">Sold out</span>
+          {%- endunless -%}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% stylesheet %}
+  .akino-card-meta {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .akino-card-meta__eyebrow {
+    margin: 0;
+    font-family: var(--font-subheading--family), sans-serif;
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground-rgb) / 0.55);
+    line-height: 1.3;
+  }
+
+  .akino-card-meta__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem 0.65rem;
+    font-family: var(--font-body--family), sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.35;
+    color: rgb(var(--color-foreground-rgb) / 0.68);
+  }
+
+  .akino-card-meta__sizes {
+    letter-spacing: 0.04em;
+  }
+
+  .akino-card-meta__sale {
+    color: #b42318;
+    font-weight: 600;
+  }
+
+  .akino-card-meta__soldout {
+    color: #111;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+  }
+{% endstylesheet %}

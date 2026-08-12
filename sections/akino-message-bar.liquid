@@ -1,0 +1,183 @@
+{%- comment -%}
+  Continuous scrolling message strip under the hero.
+  All messages move together left -> right in a loop.
+{%- endcomment -%}
+
+{%- if section.blocks.size > 0 -%}
+  {%- capture marquee_items -%}
+    {%- for block in section.blocks -%}
+      {%- assign message = block.settings.text | strip -%}
+      {%- if message != blank -%}
+        <span class="akino-msg-bar__text" {{ block.shopify_attributes }}>{{ message | escape }}</span>
+        <span class="akino-msg-bar__dot" aria-hidden="true">•</span>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+
+  <aside
+    class="akino-msg-bar"
+    style="--akino-marquee-speed: {{ section.settings.speed }}s;"
+    {{ section.shopify_attributes }}
+  >
+    <div class="akino-msg-bar__track">
+      <div class="akino-msg-bar__group">
+        {{ marquee_items }}
+      </div>
+      <div
+        class="akino-msg-bar__group"
+        aria-hidden="true"
+      >
+        {{ marquee_items }}
+      </div>
+    </div>
+  </aside>
+{%- endif -%}
+
+{% stylesheet %}
+  .akino-message-bar-section {
+    margin: 0;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .akino-message-bar-section > .section-background {
+    display: none;
+  }
+
+  .akino-msg-bar {
+    background: #111;
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+    border: 0;
+    box-shadow: none;
+    padding: 0.85rem 0;
+  }
+
+  .akino-msg-bar__track {
+    display: flex;
+    width: max-content;
+    animation: akino-marquee-ltr var(--akino-marquee-speed, 28s) linear infinite;
+  }
+
+  .akino-msg-bar__group {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    padding-inline-end: 1.75rem;
+    white-space: nowrap;
+  }
+
+  .akino-msg-bar__text {
+    font-family: var(--font-subheading--family), sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: #fff;
+  }
+
+  .akino-msg-bar__dot {
+    color: rgb(255 255 255 / 0.45);
+    font-size: 0.7rem;
+    line-height: 1;
+  }
+
+  /* Left -> right continuous loop */
+  @keyframes akino-marquee-ltr {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .akino-msg-bar__track {
+      animation: none;
+      transform: none;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .akino-msg-bar__group[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .akino-msg-bar__text {
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+    }
+
+    .akino-msg-bar__group {
+      gap: 1.25rem;
+      padding-inline-end: 1.25rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Message bar",
+  "tag": "section",
+  "class": "akino-message-bar-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Message",
+          "default": "Free delivery on orders over ৳1500"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Scroll speed",
+      "min": 12,
+      "max": 60,
+      "step": 2,
+      "unit": "s",
+      "default": 28,
+      "info": "Higher = slower"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Message bar",
+      "blocks": {
+        "message_1": {
+          "type": "message",
+          "settings": {
+            "text": "Free delivery on orders over ৳1500"
+          }
+        },
+        "message_2": {
+          "type": "message",
+          "settings": {
+            "text": "Cash on delivery available nationwide"
+          }
+        }
+      },
+      "block_order": ["message_1", "message_2"],
+      "settings": {
+        "speed": 28
+      }
+    }
+  ]
+}
+{% endschema %}

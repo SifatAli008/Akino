@@ -1,0 +1,182 @@
+{%- doc -%}
+  Akino oversize drop-shoulder size chart for PDP Size & fit accordion.
+{%- enddoc -%}
+
+<div class="akino-size-chart">
+  <header class="akino-size-chart__header">
+    <p class="akino-size-chart__eyebrow">Size chart</p>
+    <h3 class="akino-size-chart__title">Oversize drop shoulder</h3>
+    <p class="akino-size-chart__unit">All sizes are in inches</p>
+  </header>
+
+  <div class="akino-size-chart__table-wrap">
+    <table class="akino-size-chart__table">
+      <caption class="visually-hidden">Oversize drop shoulder size chart in inches</caption>
+      <thead>
+        <tr>
+          <th scope="col">Size</th>
+          <th scope="col">Chest</th>
+          <th scope="col">Length</th>
+          <th scope="col">Sleeve</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Medium (M)</th>
+          <td>44</td>
+          <td>27</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <th scope="row">Large (L)</th>
+          <td>46</td>
+          <td>28</td>
+          <td>9.5</td>
+        </tr>
+        <tr>
+          <th scope="row">Extra large (XL)</th>
+          <td>48</td>
+          <td>29</td>
+          <td>10</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ul class="akino-size-chart__features">
+    <li>Drop shoulder</li>
+    <li>Premium comfort</li>
+    <li>Breathable fabric</li>
+    <li>Perfect fit</li>
+  </ul>
+
+  <p class="akino-size-chart__note">
+    Please allow 0.5–1 inch difference due to manual measurement.
+  </p>
+</div>
+
+{% stylesheet %}
+  .akino-size-chart {
+    width: 100%;
+    max-width: 28rem;
+    display: grid;
+    gap: 1rem;
+    padding-block: 0.25rem 0.75rem;
+    color: var(--color-foreground);
+  }
+
+  .akino-size-chart__header {
+    text-align: center;
+  }
+
+  .akino-size-chart__eyebrow {
+    margin: 0 0 0.35rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  .akino-size-chart__title {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .akino-size-chart__unit {
+    margin: 0.45rem 0 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.65;
+  }
+
+  .akino-size-chart__table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .akino-size-chart__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    min-width: 16rem;
+  }
+
+  .akino-size-chart__table th,
+  .akino-size-chart__table td {
+    padding: 0.7rem 0.55rem;
+    text-align: center;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.1);
+  }
+
+  .akino-size-chart__table thead th {
+    background: #111;
+    color: #fff;
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .akino-size-chart__table tbody th {
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .akino-size-chart__table tbody tr:nth-child(even) {
+    background: rgb(var(--color-foreground-rgb) / 0.03);
+  }
+
+  .akino-size-chart__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem 0.75rem;
+  }
+
+  .akino-size-chart__features li {
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding-inline-start: 0.85rem;
+    position: relative;
+  }
+
+  .akino-size-chart__features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.45;
+  }
+
+  .akino-size-chart__note {
+    margin: 0;
+    padding: 0.7rem 0.85rem;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    background: rgb(var(--color-foreground-rgb) / 0.04);
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.08);
+  }
+
+  @media screen and (max-width: 749px) {
+    .akino-size-chart {
+      max-width: none;
+    }
+
+    .akino-size-chart__features {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+{% endstylesheet %}

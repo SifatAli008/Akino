@@ -1,0 +1,169 @@
+{%- doc -%}
+  Fabric description and quality section for Akino PDP accordion.
+{%- enddoc -%}
+
+<div class="akino-fabric">
+  <header class="akino-fabric__header">
+    <p class="akino-fabric__eyebrow">Material</p>
+    <h3 class="akino-fabric__title">Fabric & quality</h3>
+  </header>
+
+  <p class="akino-fabric__intro">
+    Soft cotton-blend jersey designed for everyday comfort with a clean oversized drape and lasting graphic finish.
+  </p>
+
+  <dl class="akino-fabric__specs">
+    <div class="akino-fabric__spec">
+      <dt>Fabric</dt>
+      <dd>Premium cotton-blend jersey</dd>
+    </div>
+    <div class="akino-fabric__spec">
+      <dt>Feel</dt>
+      <dd>Soft hand-feel · breathable · light stretch</dd>
+    </div>
+    <div class="akino-fabric__spec">
+      <dt>Weight</dt>
+      <dd>Mid-weight for year-round wear</dd>
+    </div>
+    <div class="akino-fabric__spec">
+      <dt>Print</dt>
+      <dd>High-detail graphic with durable color hold</dd>
+    </div>
+    <div class="akino-fabric__spec">
+      <dt>Construction</dt>
+      <dd>Reinforced seams · clean drop-shoulder cut</dd>
+    </div>
+  </dl>
+
+  <ul class="akino-fabric__quality" role="list">
+    <li>
+      <strong>Comfort first</strong>
+      <span>Smooth on skin with easy movement through body and sleeve.</span>
+    </li>
+    <li>
+      <strong>Built to last</strong>
+      <span>Quality stitching and fabric recovery that holds shape after washes.</span>
+    </li>
+    <li>
+      <strong>Breathable wear</strong>
+      <span>Airy jersey that stays comfortable in Dhaka heat and daily use.</span>
+    </li>
+    <li>
+      <strong>Print integrity</strong>
+      <span>Wash inside out to keep the graphic sharp and fade-resistant.</span>
+    </li>
+  </ul>
+</div>
+
+{% stylesheet %}
+  .akino-fabric {
+    display: grid;
+    gap: 1rem;
+    padding-block: 0.15rem 0.65rem;
+    max-width: 34rem;
+  }
+
+  .akino-fabric__header {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .akino-fabric__eyebrow {
+    margin: 0;
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  .akino-fabric__title {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  .akino-fabric__intro {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgb(var(--color-foreground-rgb) / 0.82);
+  }
+
+  .akino-fabric__specs {
+    margin: 0;
+    display: grid;
+    gap: 0;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.1);
+  }
+
+  .akino-fabric__spec {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 0.75rem;
+    padding: 0.75rem 0.85rem;
+    border-block-end: 1px solid rgb(var(--color-foreground-rgb) / 0.08);
+    align-items: baseline;
+  }
+
+  .akino-fabric__spec:last-child {
+    border-block-end: none;
+  }
+
+  .akino-fabric__spec:nth-child(even) {
+    background: rgb(var(--color-foreground-rgb) / 0.025);
+  }
+
+  .akino-fabric__spec dt {
+    margin: 0;
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  .akino-fabric__spec dd {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgb(var(--color-foreground-rgb) / 0.9);
+  }
+
+  .akino-fabric__quality {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .akino-fabric__quality li {
+    display: grid;
+    gap: 0.2rem;
+    padding-inline-start: 0.85rem;
+    border-inline-start: 2px solid rgb(var(--color-foreground-rgb) / 0.18);
+  }
+
+  .akino-fabric__quality strong {
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+  }
+
+  .akino-fabric__quality span {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: rgb(var(--color-foreground-rgb) / 0.75);
+  }
+
+  @media screen and (max-width: 749px) {
+    .akino-fabric {
+      max-width: none;
+    }
+
+    .akino-fabric__spec {
+      grid-template-columns: 5.5rem 1fr;
+      gap: 0.55rem;
+      padding: 0.7rem 0.75rem;
+    }
+  }
+{% endstylesheet %}

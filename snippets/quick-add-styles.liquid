@@ -1,0 +1,202 @@
+{%- doc -%}
+  Quick-add styles consolidated into a single snippet.
+
+  @example
+  {% render 'quick-add-styles' %}
+{%- enddoc -%}
+
+{% stylesheet %}
+  /* Quick Add — full-width bar on product cards */
+  .quick-add {
+    --quick-add-offset: 0.75rem;
+    --quick-add-right: var(--quick-add-offset);
+    --quick-add-bottom: var(--quick-add-offset);
+
+    position: absolute;
+    inset: 0;
+    z-index: var(--layer-raised);
+    pointer-events: none;
+  }
+
+  .quick-add .variant-option__button-label input[data-option-available='false'] {
+    cursor: not-allowed;
+  }
+
+  .quick-add[class*='color-scheme-'] {
+    background-color: #0000;
+  }
+
+  product-card:is(:hover, :focus-within) .quick-add__button {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .quick-add__button {
+    display: var(--quick-add-mobile-display, flex);
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: #111;
+    color: #fff;
+    padding: 0.7rem 0.85rem;
+    border-radius: 0;
+    border: 1px solid #111;
+    height: auto;
+    min-height: 2.75rem;
+    width: calc(100% - (var(--quick-add-offset) * 2));
+    max-width: none;
+    cursor: pointer;
+    opacity: var(--quick-add-mobile-opacity, 1);
+    overflow: hidden;
+    pointer-events: all;
+    position: absolute;
+    left: var(--quick-add-offset);
+    right: var(--quick-add-offset);
+    bottom: var(--quick-add-bottom);
+    backdrop-filter: none;
+    font-family: var(--font-subheading--family), sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    transform: translateY(0);
+
+    &:hover {
+      background: #fff;
+      color: #111;
+      scale: none;
+    }
+
+    &:active {
+      scale: none;
+      opacity: 0.92;
+    }
+
+    .quick-add[stay-visible] & {
+      display: grid;
+    }
+
+    @media screen and (min-width: 750px) {
+      display: var(--quick-add-display, flex);
+      opacity: 0;
+      transform: translateY(0.35rem);
+    }
+  }
+
+  .quick-add__button.add-to-cart-button {
+    height: auto;
+    min-height: 2.75rem;
+  }
+
+  .quick-add__button .add-to-cart-text {
+    background: transparent;
+    overflow: visible;
+    border-radius: 0;
+    height: auto;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  .quick-add__button .svg-wrapper .checkmark-burst {
+    width: 18px;
+    height: 18px;
+  }
+
+  .quick-add__button .add-to-cart-icon {
+    height: 1rem;
+    width: 1rem;
+    color: currentColor;
+  }
+
+  .quick-add__button .add-to-cart-icon svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .quick-add__button .add-to-cart-text__content {
+    display: block;
+    grid-template-columns: none;
+
+    & > span {
+      min-width: 0;
+
+      span {
+        padding-right: 0;
+        opacity: 1;
+        display: inline;
+        filter: none;
+        translate: none;
+      }
+    }
+  }
+
+  .quick-add__button[data-added='true'] .add-to-cart-text {
+    animation-name: atc-fade-out;
+  }
+
+  .quick-add__button[data-added='true'] .add-to-cart-text--added {
+    translate: 0 0;
+    animation-name: atc-fade-in;
+  }
+
+  .quick-add__product-form-component {
+    height: 100%;
+  }
+
+  .quick-add__product-form-component .shopify-product-form {
+    display: flex;
+    justify-content: stretch;
+    align-items: flex-end;
+    container-type: inline-size;
+    height: 100%;
+  }
+
+  .quick-add-modal .product-media {
+    width: 100%;
+    height: 100%;
+  }
+
+  .quick-add-modal deferred-media {
+    display: none;
+  }
+
+  .quick-add-modal .media-gallery--carousel slideshow-component {
+    --cursor: default;
+  }
+
+  .quick-add__button:is(:hover, :focus-visible) {
+    .add-to-cart-text__content {
+      grid-template-columns: none;
+
+      span span {
+        opacity: 1;
+        translate: none;
+        filter: none;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .quick-add__button {
+      transition: none;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .quick-add__button {
+      transition-property: opacity, transform, background-color, color, border-color;
+      transition-duration: 180ms;
+      transition-timing-function: ease;
+    }
+
+    .quick-add__button .add-to-cart-text__content,
+    .quick-add__button .add-to-cart-text__content span span {
+      transition: none;
+    }
+  }
+{% endstylesheet %}

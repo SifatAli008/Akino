@@ -1,0 +1,172 @@
+{%- doc -%}
+  Renders AKINO contact details for the contact page.
+{%- enddoc -%}
+
+{%- liquid
+  assign contact_email = shop.email | default: 'info@akinolondon.co.uk'
+  assign contact_phone = shop.phone
+-%}
+
+<div class="akino-contact">
+  <div class="akino-contact__intro">
+    <p class="akino-contact__eyebrow">Customer care</p>
+    <h2 class="akino-contact__title">We're here to help</h2>
+    <p class="akino-contact__lead">
+      Questions about sizing, orders, delivery, or payments? Send us a message and our team will get back to you.
+    </p>
+  </div>
+
+  <ul class="akino-contact__list" role="list">
+    <li class="akino-contact__item">
+      <p class="akino-contact__label">Email</p>
+      <a class="akino-contact__value" href="mailto:{{ contact_email }}">{{ contact_email }}</a>
+      <p class="akino-contact__note">Best for order updates, exchanges, and general support</p>
+    </li>
+
+    <li class="akino-contact__item">
+      <p class="akino-contact__label">Facebook</p>
+      <a
+        class="akino-contact__value"
+        href="https://www.facebook.com/akinobd/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        facebook.com/akinobd
+      </a>
+      <p class="akino-contact__note">Follow AKINO Dhaka for drops, updates, and support</p>
+    </li>
+
+    {% if contact_phone != blank %}
+      <li class="akino-contact__item">
+        <p class="akino-contact__label">Phone / WhatsApp</p>
+        <a class="akino-contact__value" href="tel:{{ contact_phone | replace: ' ', '' }}">{{ contact_phone }}</a>
+        <p class="akino-contact__note">Available during business hours</p>
+      </li>
+    {% endif %}
+
+    <li class="akino-contact__item">
+      <p class="akino-contact__label">Response time</p>
+      <p class="akino-contact__value">Within 24 hours</p>
+      <p class="akino-contact__note">Usually same day on working days (Sat–Thu)</p>
+    </li>
+
+    <li class="akino-contact__item">
+      <p class="akino-contact__label">Delivery</p>
+      <p class="akino-contact__value">Nationwide Bangladesh</p>
+      <p class="akino-contact__note">Most orders arrive in 3–4 working days. Dhaka is typically faster.</p>
+    </li>
+
+    <li class="akino-contact__item">
+      <p class="akino-contact__label">Payments</p>
+      <p class="akino-contact__value">COD, bKash, Nagad, Rocket, Visa</p>
+      <p class="akino-contact__note">Cash on Delivery available across Bangladesh</p>
+    </li>
+  </ul>
+
+  <div class="akino-contact__tips">
+    <p class="akino-contact__label">When you write to us, include</p>
+    <ul class="akino-contact__tips-list">
+      <li>Your full name and order number (if you have one)</li>
+      <li>Product name / size</li>
+      <li>A short description of how we can help</li>
+    </ul>
+  </div>
+</div>
+
+{% stylesheet %}
+  .akino-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    width: 100%;
+    max-width: 28rem;
+  }
+
+  .akino-contact__eyebrow {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-subheading--family), sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground-rgb) / 0.55);
+  }
+
+  .akino-contact__title {
+    margin: 0 0 0.65rem;
+    font-family: var(--font-heading--family), serif;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .akino-contact__lead {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: rgb(var(--color-foreground-rgb) / 0.78);
+  }
+
+  .akino-contact__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
+  }
+
+  .akino-contact__item {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
+  }
+
+  .akino-contact__label {
+    margin: 0 0 0.3rem;
+    font-family: var(--font-subheading--family), sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground-rgb) / 0.5);
+  }
+
+  .akino-contact__value {
+    display: inline-block;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--color-foreground);
+    text-decoration: none;
+  }
+
+  a.akino-contact__value:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .akino-contact__note {
+    margin: 0.25rem 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: rgb(var(--color-foreground-rgb) / 0.62);
+  }
+
+  .akino-contact__tips {
+    padding-top: 0.25rem;
+  }
+
+  .akino-contact__tips-list {
+    margin: 0.5rem 0 0;
+    padding-left: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    color: rgb(var(--color-foreground-rgb) / 0.75);
+  }
+{% endstylesheet %}
