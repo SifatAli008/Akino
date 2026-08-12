@@ -70,8 +70,19 @@
         video_class: 'media-block__media media-block__media--video border-style'
       %}
     {%- elsif block_settings.asset_video != blank -%}
+      {%- capture akino_media_src -%}
+        {%- render 'akino-video-src', filename: block_settings.asset_video, width: 1600 -%}
+      {%- endcapture -%}
+      {%- capture akino_media_poster -%}
+        {%- render 'akino-video-poster', filename: block_settings.asset_video -%}
+      {%- endcapture -%}
+      {%- assign akino_media_src = akino_media_src | strip -%}
+      {%- assign akino_media_poster = akino_media_poster | strip -%}
       <video
         class="media-block__media media-block__media--video border-style"
+        src="{{ akino_media_src }}"
+        data-fallback-src="{{ block_settings.asset_video | asset_url }}"
+        {% if akino_media_poster != blank %}poster="{{ akino_media_poster }}"{% endif %}
         {% if block_settings.video_autoplay %}
           autoplay
           muted
@@ -81,12 +92,8 @@
           loop
         {% endif %}
         preload="metadata"
-      >
-        <source
-          src="{{ block_settings.asset_video | asset_url }}"
-          type="video/mp4"
-        >
-      </video>
+        onerror="if(this.dataset.fallbackSrc&&this.dataset.usedFallback!=='1'){this.dataset.usedFallback='1';this.src=this.dataset.fallbackSrc;this.load();}"
+      ></video>
     {%- else -%}
       <div class="media-block__media border-style">
         {{ 'hero-apparel-3' | placeholder_svg_tag }}

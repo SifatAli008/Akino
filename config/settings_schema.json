@@ -2284,5 +2284,23 @@
         "default": "equal-width-buttons"
       }
     ]
+  },
+  {
+    "name": "Akino media (Cloudinary)",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cloudinary_videos",
+        "label": "Serve hero / vibe videos from Cloudinary",
+        "default": false,
+        "info": "Turn on after running npm run upload:videos so hero/vibe videos load from Cloudinary CDN."
+      },
+      {
+        "type": "text",
+        "id": "cloudinary_cloud_name",
+        "label": "Cloudinary cloud name",
+        "default": "hua42kke"
+      }
+    ]
   }
 ]

@@ -1,0 +1,29 @@
+{%- comment -%}
+  Optimized Cloudinary video URL, or theme asset fallback.
+  Params: filename (e.g. akino-hero-4.mp4), width (optional, default 1600)
+{%- endcomment -%}
+{%- liquid
+  assign filename = filename | default: ''
+  assign width = width | default: 1600
+  assign cloud_name = settings.cloudinary_cloud_name | default: 'hua42kke'
+  if cloud_name == blank
+    assign cloud_name = 'hua42kke'
+  endif
+  assign public_id = ''
+
+  case filename
+    when 'akino-hero.mp4'
+      assign public_id = 'akino/hero'
+    when 'akino-hero-2.mp4'
+      assign public_id = 'akino/hero-2'
+    when 'akino-hero-3.mp4'
+      assign public_id = 'akino/hero-3'
+    when 'akino-hero-4.mp4'
+      assign public_id = 'akino/hero-4'
+  endcase
+-%}
+{%- if settings.cloudinary_videos and public_id != blank -%}
+https://res.cloudinary.com/{{ cloud_name }}/video/upload/q_auto,c_limit,w_{{ width }}/{{ public_id }}.mp4
+{%- elsif filename != blank -%}
+{{- filename | asset_url -}}
+{%- endif -%}

@@ -110,19 +110,26 @@
                         class: 'akino-vibe__media-el'
                     }}
                   {%- when 'asset-video' -%}
+                    {%- capture akino_vibe_src -%}
+                      {%- render 'akino-video-src', filename: asset_video, width: 960 -%}
+                    {%- endcapture -%}
+                    {%- capture akino_vibe_poster -%}
+                      {%- render 'akino-video-poster', filename: asset_video -%}
+                    {%- endcapture -%}
+                    {%- assign akino_vibe_src = akino_vibe_src | strip -%}
+                    {%- assign akino_vibe_poster = akino_vibe_poster | strip -%}
                     <video
                       class="akino-vibe__media-el"
+                      src="{{ akino_vibe_src }}"
+                      data-fallback-src="{{ asset_video | asset_url }}"
+                      {% if akino_vibe_poster != blank %}poster="{{ akino_vibe_poster }}"{% endif %}
                       autoplay
                       muted
                       loop
                       playsinline
                       preload="metadata"
-                    >
-                      <source
-                        src="{{ asset_video | asset_url }}"
-                        type="video/mp4"
-                      >
-                    </video>
+                      onerror="if(this.dataset.fallbackSrc&&this.dataset.usedFallback!=='1'){this.dataset.usedFallback='1';this.src=this.dataset.fallbackSrc;this.load();this.play&&this.play().catch(()=>{});}"
+                    ></video>
                   {%- when 'image' -%}
                     {{
                       block.settings.image

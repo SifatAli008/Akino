@@ -1,0 +1,46 @@
+{
+  "cloudName": "hua42kke",
+  "uploadedAt": "2026-08-12T06:45:21.754Z",
+  "videos": [
+    {
+      "file": "akino-hero.mp4",
+      "publicId": "akino/hero",
+      "bytes": 3908958,
+      "duration": 17.972245,
+      "url": "https://res.cloudinary.com/hua42kke/video/upload/c_limit,f_mp4,q_auto,vc_auto,w_1920/v1/akino/hero?_a=BAMAPqcg0",
+      "urlMobile": "https://res.cloudinary.com/hua42kke/video/upload/c_limit,f_mp4,q_auto,vc_auto,w_960/v1/akino/hero?_a=BAMAPqcg0",
+      "poster": "https://res.cloudinary.com/hua42kke/video/upload/so_0/c_limit,f_auto,q_auto,w_1600/v1/akino/hero.jpg?_a=BAMAPqcg0",
+      "secure_url": "https://res.cloudinary.com/hua42kke/video/upload/v1786517113/akino/hero.mp4"
+    },
+    {
+      "file": "akino-hero-2.mp4",
+      "publicId": "akino/hero-2",
+      "bytes": 6937266,
+      "duration": 8.448,
+      "url": "https://res.cloudinary.com/hua42kke/video/upload/c_limit,f_mp4,q_auto,vc_auto,w_1920/v1/akino/hero-2?_a=BAMAPqcg0",
+      "urlMobile": "https://res.cloudinary.com/hua42kke/video/upload/c_limit,f_mp4,q_auto,vc_auto,w_960/v1/akino/hero-2?_a=BAMAPqcg0",
+      "poster": "https://res.cloudinary.com/hua42kke/video/upload/so_0/c_limit,f_auto,q_auto,w_1600/v1/akino/hero-2.jpg?_a=BAMAPqcg0",
+      "secure_url": "https://res.cloudinary.com/hua42kke/video/upload/v1786517116/akino/hero-2.mp4"
+    },
+    {
+      "file": "akino-hero-3.mp4",
+      "publicId": "akino/hero-3",
+      "bytes": 8023262,
+      "duration": 8.746667,
+      "url": "https://res.cloudinary.com/hua42kke/video/upload/c_limit,f_mp4,q_auto,vc_auto,w_1920/v1/akino/hero-3?_a=BAMAPqcg0",
+      "urlMobile": "https://res.cloudinary.com/hua42kke/video/upload/c_limit,f_mp4,q_auto,vc_auto,w_960/v1/akino/hero-3?_a=BAMAPqcg0",
+      "poster": "https://res.cloudinary.com/hua42kke/video/upload/so_0/c_limit,f_auto,q_auto,w_1600/v1/akino/hero-3.jpg?_a=BAMAPqcg0",
+      "secure_url": "https://res.cloudinary.com/hua42kke/video/upload/v1786517118/akino/hero-3.mp4"
+    },
+    {
+      "file": "akino-hero-4.mp4",
+      "publicId": "akino/hero-4",
+      "bytes": 1807727,
+      "duration": 10.52,
+      "url": "https://res.cloudinary.com/hua42kke/video/upload/c_limit,f_mp4,q_auto,vc_auto,w_1920/v1/akino/hero-4?_a=BAMAPqcg0",
+      "urlMobile": "https://res.cloudinary.com/hua42kke/video/upload/c_limit,f_mp4,q_auto,vc_auto,w_960/v1/akino/hero-4?_a=BAMAPqcg0",
+      "poster": "https://res.cloudinary.com/hua42kke/video/upload/so_0/c_limit,f_auto,q_auto,w_1600/v1/akino/hero-4.jpg?_a=BAMAPqcg0",
+      "secure_url": "https://res.cloudinary.com/hua42kke/video/upload/v1786517120/akino/hero-4.mp4"
+    }
+  ]
+}

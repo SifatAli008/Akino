@@ -1,0 +1,12 @@
+{
+  "name": "akino-theme-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "upload:videos": "node scripts/upload-videos-cloudinary.mjs"
+  },
+  "dependencies": {
+    "cloudinary": "^2.5.1",
+    "dotenv": "^16.4.7"
+  }
+}

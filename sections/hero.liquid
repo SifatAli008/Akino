@@ -191,22 +191,34 @@
           data-akino-hero-playlist
           aria-label="{{ shop.name }}"
         >
-          {%- assign akino_hero_videos = 'akino-hero.mp4,akino-hero-2.mp4,akino-hero-3.mp4' | split: ',' -%}
+          {%- assign akino_hero_videos = 'akino-hero-4.mp4,akino-hero.mp4,akino-hero-2.mp4,akino-hero-3.mp4' | split: ',' -%}
           {%- for hero_video_file in akino_hero_videos -%}
+            {%- capture akino_hero_src -%}
+              {%- render 'akino-video-src', filename: hero_video_file, width: 1600 -%}
+            {%- endcapture -%}
+            {%- capture akino_hero_poster -%}
+              {%- render 'akino-video-poster', filename: hero_video_file -%}
+            {%- endcapture -%}
+            {%- assign akino_hero_src = akino_hero_src | strip -%}
+            {%- assign akino_hero_poster = akino_hero_poster | strip -%}
+            {%- assign akino_hero_fallback = hero_video_file | asset_url -%}
             <video
               class="hero__media hero__media--asset-video{% if forloop.first %} is-active{% endif %}"
+              {% if akino_hero_poster != blank %}poster="{{ akino_hero_poster }}"{% endif %}
               {% if forloop.first %}autoplay{% endif %}
               muted
               playsinline
               webkit-playsinline
-              preload="auto"
+              preload="{% if forloop.first %}auto{% else %}metadata{% endif %}"
               disablepictureinpicture
+              data-fallback-src="{{ akino_hero_fallback }}"
+              data-slide-index="{{ forloop.index0 }}"
               data-testid="hero-desktop-video-{{ forloop.index }}"
             >
-              <source
-                src="{{ hero_video_file | asset_url }}"
-                type="video/mp4"
-              >
+              {%- if settings.cloudinary_videos and akino_hero_src != blank and akino_hero_src != akino_hero_fallback -%}
+                <source src="{{ akino_hero_src }}" type="video/mp4">
+              {%- endif -%}
+              <source src="{{ akino_hero_fallback }}" type="video/mp4">
             </video>
           {%- endfor -%}
         </div>
@@ -565,10 +577,79 @@
         section-content-wrapper
         {{section.settings.section_width}}
         {% if request.design_mode %}hero__content-wrapper--design-mode{% endif %}
+        {% if media_1_asset != blank %} hero__content-wrapper--slides{% endif %}
       "
       style="{% render 'layout-panel-style', settings: section.settings %}"
     >
-      {% content_for 'blocks' %}
+      {% capture hero_theme_blocks %}
+        {% content_for 'blocks' %}
+      {% endcapture %}
+
+      {%- if media_1_asset != blank -%}
+        <div
+          class="hero__slides"
+          data-akino-hero-slides
+        >
+          {%- comment -%} Slide 0: Drop shoulder (starts first) {%- endcomment -%}
+          <div class="hero__slide is-active" data-slide-index="0">
+            <p class="hero__slide-eyebrow">Oversized drop shoulder</p>
+            <h1 class="hero__slide-title">DROP IT</h1>
+            <p class="hero__slide-text">
+              Soft drop-shoulder tees with that baggy drape — easy from day one, made for everyday city fits.
+            </p>
+            <div class="hero__slide-actions">
+              <a class="button" href="{{ routes.all_products_collection_url }}">Grab it</a>
+              <a class="button button-secondary" href="/collections/woman">Shop For Her</a>
+            </div>
+          </div>
+
+          {%- comment -%} Slide 1: brand overview {%- endcomment -%}
+          <div class="hero__slide" data-slide-index="1">
+            <p class="hero__slide-eyebrow">Bangladesh delivery · COD available</p>
+            <h1 class="hero__slide-title">AKINO</h1>
+            <p class="hero__slide-text">
+              Statement pieces for everyday city style. Soft oversized fits, bold graphics, and drops made to stand out.
+            </p>
+            <div class="hero__slide-actions">
+              <a class="button" href="{{ routes.all_products_collection_url }}">Grab it</a>
+              <a class="button button-secondary" href="/collections/couple">See couple sets</a>
+            </div>
+          </div>
+
+          {%- comment -%} Slide 2: For Her {%- endcomment -%}
+          <div class="hero__slide" data-slide-index="2">
+            <p class="hero__slide-eyebrow">For her edit</p>
+            <h1 class="hero__slide-title">HER ERA</h1>
+            <p class="hero__slide-text">
+              Soft oversized drops made for campus days, late hangs, and every city fit in between.
+            </p>
+            <div class="hero__slide-actions">
+              <a class="button" href="/collections/woman">Shop For Her</a>
+              <a class="button button-secondary" href="{{ routes.all_products_collection_url }}">Shop all</a>
+            </div>
+          </div>
+
+          {%- comment -%} Slide 3: Couple / graphics {%- endcomment -%}
+          <div class="hero__slide" data-slide-index="3">
+            <p class="hero__slide-eyebrow">Match your person</p>
+            <h1 class="hero__slide-title">COUPLE UP</h1>
+            <p class="hero__slide-text">
+              Matching sets and bold graphics for you and your person — made to turn heads together.
+            </p>
+            <div class="hero__slide-actions">
+              <a class="button" href="/collections/couple">Shop Couple</a>
+              <a class="button button-secondary" href="/collections/anime">Shop Anime</a>
+            </div>
+          </div>
+        </div>
+        {%- if request.design_mode -%}
+          <div class="hero__slides-fallback" hidden>
+            {{ hero_theme_blocks }}
+          </div>
+        {%- endif -%}
+      {%- else -%}
+        {{ hero_theme_blocks }}
+      {%- endif -%}
     </div>
   </div>
 </div>
@@ -584,18 +665,43 @@
       video.setAttribute('muted', '');
       video.playsInline = true;
       video.setAttribute('playsinline', '');
-      video.preload = 'auto';
+      if (!video.getAttribute('preload')) video.preload = 'auto';
+
+      const useFallback = () => {
+        const fallback = video.dataset.fallbackSrc;
+        if (!fallback || video.dataset.usedFallback === 'true') return false;
+        video.dataset.usedFallback = 'true';
+        video.src = fallback;
+        video.load();
+        return true;
+      };
+
+      if (video.dataset.fallbackBound !== 'true') {
+        video.dataset.fallbackBound = 'true';
+        video.addEventListener('error', () => {
+          if (useFallback()) safePlay(video);
+        });
+      }
+
+      if (video.error) useFallback();
     };
 
     const safePlay = (video) => {
+      if (!video) return;
       const playPromise = video.play();
       if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.catch(() => {});
+        playPromise.catch(() => {
+          const retry = () => safePlay(video);
+          video.addEventListener('canplay', retry, { once: true });
+          setTimeout(() => {
+            video.removeEventListener('canplay', retry);
+            video.play()?.catch(() => {});
+          }, 400);
+        });
       }
     };
 
     const warmVideo = (video) => {
-      // Force the browser to start buffering/decoding ahead of time.
       const playPromise = video.play();
       if (playPromise && typeof playPromise.then === 'function') {
         playPromise
@@ -605,6 +711,15 @@
           })
           .catch(() => {});
       }
+    };
+
+    const syncSlides = (index) => {
+      const slidesRoot = root.querySelector('[data-akino-hero-slides]');
+      if (!slidesRoot) return;
+      slidesRoot.querySelectorAll('.hero__slide').forEach((slide) => {
+        const slideIndex = Number(slide.getAttribute('data-slide-index'));
+        slide.classList.toggle('is-active', slideIndex === index);
+      });
     };
 
     const setupPlaylist = (playlist) => {
@@ -626,6 +741,7 @@
         video.classList.toggle('is-active', i === index);
         if (i !== index) warmVideo(video);
       });
+      syncSlides(index);
 
       const showIndex = (nextIndex) => {
         if (switching || videos.length < 2) return;
@@ -640,8 +756,8 @@
         next.classList.add('is-active');
         current.classList.remove('is-active');
         current.pause();
+        syncSlides(index);
 
-        // Re-warm the clip after the next one so the following swap stays instant.
         const upcoming = videos[(index + 1) % videos.length];
         if (upcoming !== next) warmVideo(upcoming);
 
@@ -655,7 +771,6 @@
           if (i === index) showIndex(index + 1);
         });
 
-        // Start the next clip slightly early so there's no black gap.
         video.addEventListener('timeupdate', () => {
           if (i !== index || switching || !video.duration) return;
           if (video.duration - video.currentTime <= 0.2) {
@@ -678,7 +793,6 @@
         safePlay(video);
       });
 
-      // Resume the active playlist clip after tab focus / back-forward cache.
       root.querySelectorAll('[data-akino-hero-playlist] video.is-active').forEach(safePlay);
     };
 
@@ -704,9 +818,84 @@
     gap: 1.25rem;
   }
 
+  /* Synced slide copy for playlist videos */
+  .hero__slides {
+    position: relative;
+    width: min(100%, 40rem);
+    min-height: 14rem;
+  }
+
+  .hero__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    transition: opacity 280ms ease, visibility 280ms ease, transform 280ms ease;
+    transform: translateY(10px);
+  }
+
+  .hero__slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    position: relative;
+    transform: translateY(0);
+  }
+
+  .hero__slide-eyebrow {
+    margin: 0;
+    font-family: var(--font-subheading--family), sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #f7f5f1;
+    opacity: 0.9;
+    text-shadow: 0 2px 24px rgb(0 0 0 / 0.35);
+  }
+
+  .hero__slide-title {
+    margin: 0;
+    font-family: var(--font-heading--family), serif;
+    font-size: clamp(2.75rem, 7.5vw, 5.25rem);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #f7f5f1;
+    text-shadow: 0 2px 24px rgb(0 0 0 / 0.35);
+  }
+
+  .hero__slide-text {
+    margin: 0;
+    max-width: 34rem;
+    font-family: var(--font-body--family), sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.55;
+    color: #f7f5f1;
+    opacity: 0.94;
+    text-shadow: 0 2px 24px rgb(0 0 0 / 0.35);
+  }
+
+  .hero__slide-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-block-start: 0.35rem;
+  }
+
   .hero .text-block,
   .hero .text-block :is(h1, h2, h3, p) {
-    color: #fff;
+    color: #f7f5f1;
     text-align: center;
     text-shadow: 0 2px 24px rgb(0 0 0 / 0.35);
     margin: 0;
@@ -805,10 +994,12 @@
     inset: 0;
     width: 100%;
     height: 100%;
+    background: #111;
   }
 
   .hero__media--asset-video {
     pointer-events: none;
+    background: #111;
   }
 
   .hero__asset-playlist .hero__media--asset-video {
@@ -816,6 +1007,8 @@
     inset: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center center;
     opacity: 0;
     visibility: hidden;
     z-index: 0;
@@ -832,11 +1025,35 @@
       --hero-min-height: 70svh !important;
     }
 
+    .hero__slides {
+      min-height: 16rem;
+      width: min(100%, 22rem);
+    }
+
+    .hero__slide {
+      gap: 0.7rem;
+    }
+
+    .hero__slide-title {
+      font-size: clamp(2.25rem, 12vw, 3.25rem);
+    }
+
+    .hero__slide-text {
+      font-size: 0.9375rem;
+    }
+
     .hero .button,
     .hero .button-secondary {
       min-width: 11.5rem;
       font-size: 0.8125rem;
       padding: 0.85rem 1.35rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__slide {
+      transition: none;
+      transform: none;
     }
   }
 

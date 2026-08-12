@@ -1,0 +1,28 @@
+{%- comment -%}
+  First-frame poster from Cloudinary. Empty if CDN off / unknown file.
+  Params: filename
+{%- endcomment -%}
+{%- liquid
+  assign filename = filename | default: ''
+  assign cloud_name = settings.cloudinary_cloud_name | default: 'hua42kke'
+  if cloud_name == blank
+    assign cloud_name = 'hua42kke'
+  endif
+  assign public_id = ''
+
+  if settings.cloudinary_videos and filename != blank
+    case filename
+      when 'akino-hero.mp4'
+        assign public_id = 'akino/hero'
+      when 'akino-hero-2.mp4'
+        assign public_id = 'akino/hero-2'
+      when 'akino-hero-3.mp4'
+        assign public_id = 'akino/hero-3'
+      when 'akino-hero-4.mp4'
+        assign public_id = 'akino/hero-4'
+    endcase
+  endif
+-%}
+{%- if public_id != blank -%}
+https://res.cloudinary.com/{{ cloud_name }}/video/upload/so_0,c_limit,w_1600,q_auto,f_jpg/{{ public_id }}.jpg
+{%- endif -%}
