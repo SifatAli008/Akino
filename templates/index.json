@@ -1,8 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
+        "text_hero_eyebrow": {
+          "type": "text",
+          "name": "Eyebrow",
+          "settings": {
+            "text": "<p>Bangladesh delivery · COD available</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "paragraph",
+            "font": "var(--font-subheading--family)",
+            "font_size": "0.75rem",
+            "line_height": "tight",
+            "letter_spacing": "loose",
+            "case": "uppercase",
+            "wrap": "pretty",
+            "color": "#f7f5f1",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "text_YLPk4p": {
           "type": "text",
           "name": "t:names.heading",
@@ -50,32 +85,6 @@
             "corner_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 8,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "text_hero_eyebrow": {
-          "type": "text",
-          "name": "Eyebrow",
-          "settings": {
-            "text": "<p>Bangladesh delivery · COD available</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "paragraph",
-            "font": "var(--font-subheading--family)",
-            "font_size": "0.75rem",
-            "line_height": "tight",
-            "letter_spacing": "loose",
-            "case": "uppercase",
-            "wrap": "pretty",
-            "color": "#f7f5f1",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -196,6 +205,126 @@
         "reflection_opacity": 75,
         "padding-block-start": 40,
         "padding-block-end": 40
+      }
+    },
+    "message_bar_after_hero": {
+      "type": "akino-message-bar",
+      "blocks": {
+        "m1": {
+          "type": "message",
+          "settings": {
+            "text": "Free delivery on orders over ৳1500"
+          }
+        },
+        "m2": {
+          "type": "message",
+          "settings": {
+            "text": "Cash on delivery available nationwide"
+          }
+        },
+        "m3": {
+          "type": "message",
+          "settings": {
+            "text": "Use code AKINO5 for 5% off unisex styles"
+          }
+        },
+        "m4": {
+          "type": "message",
+          "settings": {
+            "text": "Most orders arrive in 3–4 working days"
+          }
+        }
+      },
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4"
+      ],
+      "name": "Message bar",
+      "settings": {
+        "speed": 28
+      }
+    },
+    "vibe_grid_after_about": {
+      "type": "akino-vibe-grid",
+      "blocks": {
+        "vibe_1": {
+          "type": "vibe",
+          "settings": {
+            "label": "For Her",
+            "detail": "Soft oversized fits made for everyday city looks.",
+            "link": "shopify://collections/woman",
+            "icon": "lipstick",
+            "media_type": "video"
+          }
+        },
+        "vibe_2": {
+          "type": "vibe",
+          "settings": {
+            "label": "Couple Sets",
+            "detail": "Matching drops for you and your person.",
+            "link": "shopify://collections/couple",
+            "icon": "heart",
+            "media_type": "video"
+          }
+        },
+        "vibe_3": {
+          "type": "vibe",
+          "settings": {
+            "label": "For Him",
+            "detail": "Clean baggy fits with statement graphics.",
+            "link": "shopify://collections/men",
+            "icon": "shirt",
+            "media_type": "image"
+          }
+        },
+        "vibe_4": {
+          "type": "vibe",
+          "settings": {
+            "label": "Anime",
+            "detail": "Bold prints that actually turn heads.",
+            "link": "shopify://collections/anime",
+            "icon": "eye",
+            "media_type": "video"
+          }
+        },
+        "vibe_5": {
+          "type": "vibe",
+          "settings": {
+            "label": "Designer Collection",
+            "detail": "Limited edits for when you want to stand out.",
+            "link": "shopify://collections/designer",
+            "icon": "price_tag",
+            "media_type": "image"
+          }
+        },
+        "vibe_6": {
+          "type": "vibe",
+          "settings": {
+            "label": "Corchat",
+            "detail": "Cute handmade Corchat pieces to finish the fit.",
+            "link": "shopify://collections/corchat",
+            "icon": "paw_print",
+            "media_type": "image"
+          }
+        }
+      },
+      "block_order": [
+        "vibe_1",
+        "vibe_2",
+        "vibe_3",
+        "vibe_4",
+        "vibe_5",
+        "vibe_6"
+      ],
+      "name": "Shop your vibe",
+      "settings": {
+        "heading": "Shop your vibe",
+        "support": "Pick a lane and jump in",
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     },
     "product_list_fa6P9H": {
@@ -340,6 +469,14 @@
               },
               "blocks": {}
             },
+            "card_details": {
+              "type": "custom-liquid",
+              "name": "Card details",
+              "settings": {
+                "custom_liquid": "{% render 'akino-product-card-details', product: closest.product %}"
+              },
+              "blocks": {}
+            },
             "price_JQzVV4": {
               "type": "price",
               "name": "t:names.product_price",
@@ -363,20 +500,13 @@
               },
               "blocks": {}
             },
-            "card_details": {
-              "type": "custom-liquid",
-              "name": "Card details",
-              "settings": {
-                "custom_liquid": "{% render 'akino-product-card-details', product: closest.product %}"
-              },
-              "blocks": {}
-            },
             "card_swatches": {
               "type": "swatches",
               "name": "Swatches",
               "settings": {
                 "product_swatches_alignment": "flex-start",
                 "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
                 "product_swatches_padding_top": 4,
                 "product_swatches_padding_bottom": 0,
                 "product_swatches_padding_left": 0,
@@ -427,6 +557,342 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 40,
         "padding-block-end": 56
+      }
+    },
+    "media_with_content_CGcdaR": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "video",
+            "image": "shopify://shop_images/akino_woman.avif",
+            "link": "",
+            "asset_video": "akino-hero-2.mp4",
+            "video_loop": true,
+            "video_autoplay": true,
+            "image_position": "contain",
+            "video_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-end",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 14
+          },
+          "blocks": {
+            "jumbo_text_FhQarC": {
+              "type": "jumbo-text",
+              "name": "t:names.jumbo_text",
+              "settings": {
+                "text": "HER\nERA",
+                "font": "subheading",
+                "alignment": "right",
+                "line_height": "0.8",
+                "letter_spacing": "-0.03em",
+                "case": "uppercase",
+                "text_effect": "reveal",
+                "animation_repeat": false
+              },
+              "blocks": {}
+            },
+            "text_zyRgJa": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Soft oversized drops made for campus days, late hangs, and every city fit in between.</p>",
+                "width": "fit-content",
+                "max_width": "narrow",
+                "alignment": "right",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 4,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_TJ9rdi": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "Shop For Her",
+                "link": "shopify://collections/woman",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "jumbo_text_FhQarC",
+            "text_zyRgJa",
+            "button_TJ9rdi"
+          ]
+        }
+      },
+      "name": "t:names.editorial_jumbo_text",
+      "settings": {
+        "media_position": "right",
+        "media_width": "medium",
+        "media_height": "60svh",
+        "section_width": "full-width",
+        "extend_media": true,
+        "color_scheme": "scheme-5",
+        "edge_borders": true,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "product_list_rNbirg": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_4wXUeH": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h2>Matching looks</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "tight",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_ACHMqd": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_4wXUeH",
+            "product_list_button_ACHMqd"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_Lk7kd3": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "portrait",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_gUYjia": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "0.9375rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 2,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "card_details": {
+              "type": "custom-liquid",
+              "name": "Card details",
+              "settings": {
+                "custom_liquid": "{% render 'akino-product-card-details', product: closest.product %}"
+              },
+              "blocks": {}
+            },
+            "price_ENzyxk": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "0.9375rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 2,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "card_swatches": {
+              "type": "swatches",
+              "name": "Swatches",
+              "settings": {
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
+                "product_swatches_padding_top": 4,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0
+              },
+              "blocks": {}
+            },
+            "card_review": {
+              "type": "review",
+              "name": "Reviews",
+              "settings": {
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "primary",
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_Lk7kd3",
+            "product_title_gUYjia",
+            "card_details",
+            "price_ENzyxk",
+            "card_swatches",
+            "card_review"
+          ]
+        }
+      },
+      "name": "t:names.products_carousel",
+      "settings": {
+        "collection": "men-1",
+        "layout_type": "carousel",
+        "carousel_on_mobile": false,
+        "max_products": 6,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 16,
+        "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 24,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 56,
+        "padding-block-end": 40
       }
     },
     "section_DnLRVA": {
@@ -656,8 +1122,8 @@
           "type": "comparison-slider",
           "name": "t:names.comparison_slider",
           "settings": {
-            "before_image": "shopify://shop_images/unnamed_7247cd71-7a09-4bde-8c0c-157cae544a30.png",
-            "after_image": "shopify://shop_images/unnamed_62a669b7-6776-436c-a634-b5b71ab8d85b.png",
+            "before_image": "shopify://shop_images/akino-fight-club-1.png",
+            "after_image": "shopify://shop_images/akino-grafity-1.png",
             "slider_style": "horizontal",
             "show_text": false,
             "before_text": "",
@@ -720,341 +1186,6 @@
         "gradient_direction": "to top",
         "padding-block-start": 48,
         "padding-block-end": 48
-      }
-    },
-    "product_list_rNbirg": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_4wXUeH": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h2>Matching looks</h2>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "tight",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_ACHMqd": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_4wXUeH",
-            "product_list_button_ACHMqd"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 4,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_Lk7kd3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "portrait",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_gUYjia": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "paragraph",
-                "font": "var(--font-body--family)",
-                "font_size": "0.9375rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 2,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_ENzyxk": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "0.9375rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 2,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "card_details": {
-              "type": "custom-liquid",
-              "name": "Card details",
-              "settings": {
-                "custom_liquid": "{% render 'akino-product-card-details', product: closest.product %}"
-              },
-              "blocks": {}
-            },
-            "card_swatches": {
-              "type": "swatches",
-              "name": "Swatches",
-              "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
-              },
-              "blocks": {}
-            },
-            "card_review": {
-              "type": "review",
-              "name": "Reviews",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_Lk7kd3",
-            "product_title_gUYjia",
-            "card_details",
-            "price_ENzyxk",
-            "card_swatches",
-            "card_review"
-          ]
-        }
-      },
-      "name": "t:names.products_carousel",
-      "settings": {
-        "collection": "couple",
-        "layout_type": "carousel",
-        "carousel_on_mobile": false,
-        "max_products": 6,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 16,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "circle",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 24,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 56,
-        "padding-block-end": 40
-      }
-    },
-    "media_with_content_CGcdaR": {
-      "type": "media-with-content",
-      "blocks": {
-        "media": {
-          "type": "_media-without-appearance",
-          "static": true,
-          "settings": {
-            "media_type": "video",
-            "image": "shopify://shop_images/akino_woman.avif",
-            "link": "",
-            "asset_video": "akino-hero-2.mp4",
-            "video_loop": true,
-            "video_autoplay": true,
-            "image_position": "contain",
-            "video_position": "cover"
-          },
-          "blocks": {}
-        },
-        "content": {
-          "type": "_content-without-appearance",
-          "static": true,
-          "settings": {
-            "horizontal_alignment_flex_direction_column": "flex-end",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 14
-          },
-          "blocks": {
-            "jumbo_text_FhQarC": {
-              "type": "jumbo-text",
-              "name": "t:names.jumbo_text",
-              "settings": {
-                "text": "HER\nERA",
-                "font": "subheading",
-                "alignment": "right",
-                "line_height": "0.8",
-                "letter_spacing": "-0.03em",
-                "case": "uppercase",
-                "text_effect": "reveal",
-                "animation_repeat": false
-              },
-              "blocks": {}
-            },
-            "text_zyRgJa": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>Soft oversized drops made for campus days, late hangs, and every city fit in between.</p>",
-                "width": "fit-content",
-                "max_width": "narrow",
-                "alignment": "right",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 4,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "button_TJ9rdi": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "Shop For Her",
-                "link": "shopify://collections/woman",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "jumbo_text_FhQarC",
-            "text_zyRgJa",
-            "button_TJ9rdi"
-          ]
-        }
-      },
-      "name": "t:names.editorial_jumbo_text",
-      "settings": {
-        "media_position": "right",
-        "media_width": "medium",
-        "media_height": "60svh",
-        "section_width": "full-width",
-        "extend_media": true,
-        "color_scheme": "scheme-5",
-        "edge_borders": true,
-        "padding-block-start": 0,
-        "padding-block-end": 0
       }
     },
     "product_list_H6q8Ha": {
@@ -1199,6 +1330,14 @@
               },
               "blocks": {}
             },
+            "card_details": {
+              "type": "custom-liquid",
+              "name": "Card details",
+              "settings": {
+                "custom_liquid": "{% render 'akino-product-card-details', product: closest.product %}"
+              },
+              "blocks": {}
+            },
             "price_ffiAyb": {
               "type": "price",
               "name": "t:names.product_price",
@@ -1222,20 +1361,13 @@
               },
               "blocks": {}
             },
-            "card_details": {
-              "type": "custom-liquid",
-              "name": "Card details",
-              "settings": {
-                "custom_liquid": "{% render 'akino-product-card-details', product: closest.product %}"
-              },
-              "blocks": {}
-            },
             "card_swatches": {
               "type": "swatches",
               "name": "Swatches",
               "settings": {
                 "product_swatches_alignment": "flex-start",
                 "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
                 "product_swatches_padding_top": 4,
                 "product_swatches_padding_bottom": 0,
                 "product_swatches_padding_left": 0,
@@ -1565,6 +1697,7 @@
         "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "",
+        "edge_borders": false,
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -1580,76 +1713,29 @@
         "padding-block-end": 72
       }
     },
-    "message_bar_after_hero": {
-      "type": "akino-message-bar",
-      "name": "Message bar",
-      "blocks": {
-        "m1": {
-          "type": "message",
-          "settings": {
-            "text": "Free delivery on orders over ৳1500"
-          },
-          "blocks": {}
-        },
-        "m2": {
-          "type": "message",
-          "settings": {
-            "text": "Cash on delivery available nationwide"
-          },
-          "blocks": {}
-        },
-        "m3": {
-          "type": "message",
-          "settings": {
-            "text": "Use code AKINO5 for 5% off unisex styles"
-          },
-          "blocks": {}
-        },
-        "m4": {
-          "type": "message",
-          "settings": {
-            "text": "Most orders arrive in 3–4 working days"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "m1",
-        "m2",
-        "m3",
-        "m4"
-      ],
-      "settings": {
-        "speed": 28
-      }
-    },
     "about_after_hero": {
       "type": "akino-about",
-      "name": "About",
       "blocks": {
         "feature_1": {
           "type": "feature",
           "settings": {
             "heading": "Oversized on purpose",
             "text": "Baggy drop-shoulder fits made for campus, hangs, and late-night runs."
-          },
-          "blocks": {}
+          }
         },
         "feature_2": {
           "type": "feature",
           "settings": {
             "heading": "Main character energy",
             "text": "Bold anime, football, and couple drops — prints that actually turn heads."
-          },
-          "blocks": {}
+          }
         },
         "feature_3": {
           "type": "feature",
           "settings": {
             "heading": "Built for your scroll",
             "text": "Soft tees you’ll live in — selfie-ready, COD-easy, Dhaka to doorstep."
-          },
-          "blocks": {}
+          }
         }
       },
       "block_order": [
@@ -1657,6 +1743,7 @@
         "feature_2",
         "feature_3"
       ],
+      "name": "About",
       "settings": {
         "eyebrow": "About",
         "heading": "Made for city days and late nights",
@@ -1666,93 +1753,6 @@
         "color_scheme": "scheme-1",
         "padding_top": 96,
         "padding_bottom": 96
-      }
-    },
-    "vibe_grid_after_about": {
-      "type": "akino-vibe-grid",
-      "name": "Shop your vibe",
-      "blocks": {
-        "vibe_1": {
-          "type": "vibe",
-          "settings": {
-            "label": "For Her",
-            "detail": "Soft oversized fits made for everyday city looks.",
-            "link": "shopify://collections/woman",
-            "icon": "lipstick",
-            "media_type": "video"
-          },
-          "blocks": {}
-        },
-        "vibe_2": {
-          "type": "vibe",
-          "settings": {
-            "label": "Couple Sets",
-            "detail": "Matching drops for you and your person.",
-            "link": "shopify://collections/couple",
-            "icon": "heart",
-            "media_type": "video"
-          },
-          "blocks": {}
-        },
-        "vibe_3": {
-          "type": "vibe",
-          "settings": {
-            "label": "For Him",
-            "detail": "Clean baggy fits with statement graphics.",
-            "link": "shopify://collections/men",
-            "icon": "shirt",
-            "media_type": "image"
-          },
-          "blocks": {}
-        },
-        "vibe_4": {
-          "type": "vibe",
-          "settings": {
-            "label": "Anime",
-            "detail": "Bold prints that actually turn heads.",
-            "link": "shopify://collections/anime",
-            "icon": "eye",
-            "media_type": "video"
-          },
-          "blocks": {}
-        },
-        "vibe_5": {
-          "type": "vibe",
-          "settings": {
-            "label": "Designer Collection",
-            "detail": "Limited edits for when you want to stand out.",
-            "link": "shopify://collections/designer",
-            "icon": "price_tag",
-            "media_type": "image"
-          },
-          "blocks": {}
-        },
-        "vibe_6": {
-          "type": "vibe",
-          "settings": {
-            "label": "Corchat",
-            "detail": "Cute handmade Corchat pieces to finish the fit.",
-            "link": "shopify://collections/corchat",
-            "icon": "paw_print",
-            "media_type": "image"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "vibe_1",
-        "vibe_2",
-        "vibe_3",
-        "vibe_4",
-        "vibe_5",
-        "vibe_6"
-      ],
-      "settings": {
-        "heading": "Shop your vibe",
-        "support": "Pick a lane and jump in",
-        "color_scheme": "scheme-1",
-        "padding_top": 56,
-        "padding_bottom": 56
       }
     }
   },
