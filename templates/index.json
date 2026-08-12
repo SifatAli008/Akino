@@ -246,48 +246,6 @@
         "speed": 28
       }
     },
-    "about_after_hero": {
-      "type": "akino-about",
-      "blocks": {
-        "feature_1": {
-          "type": "feature",
-          "settings": {
-            "heading": "Oversized on purpose",
-            "text": "Baggy drop-shoulder fits made for campus, hangs, and late-night runs."
-          }
-        },
-        "feature_2": {
-          "type": "feature",
-          "settings": {
-            "heading": "Main character energy",
-            "text": "Bold anime, football, and couple drops — prints that actually turn heads."
-          }
-        },
-        "feature_3": {
-          "type": "feature",
-          "settings": {
-            "heading": "Built for your scroll",
-            "text": "Soft tees you’ll live in — selfie-ready, COD-easy, Dhaka to doorstep."
-          }
-        }
-      },
-      "block_order": [
-        "feature_1",
-        "feature_2",
-        "feature_3"
-      ],
-      "name": "About",
-      "settings": {
-        "eyebrow": "About",
-        "heading": "Made for city days and late nights",
-        "text": "<p>Akino is a Bangladesh-born fashion label built around soft oversized fits, bold graphics, and pieces you can actually live in. From drop-shoulder tees to couple styles, every drop is designed to stand out without trying too hard.</p>",
-        "button_label": "Shop the drop",
-        "button_link": "shopify://collections/all",
-        "color_scheme": "scheme-1",
-        "padding_top": 96,
-        "padding_bottom": 96
-      }
-    },
     "vibe_grid_after_about": {
       "type": "akino-vibe-grid",
       "blocks": {
@@ -1754,18 +1712,60 @@
         "padding-block-start": 56,
         "padding-block-end": 72
       }
+    },
+    "about_after_hero": {
+      "type": "akino-about",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "heading": "Oversized on purpose",
+            "text": "Baggy drop-shoulder fits made for campus, hangs, and late-night runs."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "heading": "Main character energy",
+            "text": "Bold anime, football, and couple drops — prints that actually turn heads."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "heading": "Built for your scroll",
+            "text": "Soft tees you’ll live in — selfie-ready, COD-easy, Dhaka to doorstep."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "name": "About",
+      "settings": {
+        "eyebrow": "About",
+        "heading": "Made for city days and late nights",
+        "text": "<p>Akino is a Bangladesh-born fashion label built around soft oversized fits, bold graphics, and pieces you can actually live in. From drop-shoulder tees to couple styles, every drop is designed to stand out without trying too hard.</p>",
+        "button_label": "Shop the drop",
+        "button_link": "shopify://collections/all",
+        "color_scheme": "scheme-1",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "message_bar_after_hero",
-    "about_after_hero",
     "vibe_grid_after_about",
     "product_list_fa6P9H",
     "media_with_content_CGcdaR",
     "product_list_rNbirg",
     "section_DnLRVA",
     "product_list_H6q8Ha",
+    "about_after_hero",
     "section_8JaLjh"
   ]
 }
