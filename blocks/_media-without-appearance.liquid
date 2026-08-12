@@ -48,6 +48,13 @@
       "visible_if": "{{ block.settings.media_type == 'video' }}"
     },
     {
+      "type": "text",
+      "id": "asset_video",
+      "label": "Theme asset video",
+      "info": "Filename in assets/ (used when Shopify video is empty)",
+      "visible_if": "{{ block.settings.media_type == 'video' }}"
+    },
+    {
       "type": "checkbox",
       "id": "video_loop",
       "label": "t:settings.loop",

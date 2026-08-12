@@ -14,7 +14,16 @@
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
-  class="section section--{{ section.settings.section_width }} disable-section-top-offset media-with-content color-{{ section.settings.color_scheme }} spacing-style {{ media_class_modifier }}"
+  class="
+    section
+    section--{{ section.settings.section_width }}
+    disable-section-top-offset
+    media-with-content
+    color-{{ section.settings.color_scheme }}
+    spacing-style
+    {{ media_class_modifier }}
+    {% if section.settings.edge_borders %} media-with-content--edge-borders{% endif %}
+  "
   data-testid="media-with-content"
   style="
     {%- render 'spacing-style', settings: section.settings %}
@@ -195,6 +204,34 @@
 
     min-height: 500px;
   }
+
+  .media-with-content--edge-borders {
+    border-block-start: 3px solid rgb(247 245 241 / 0.28);
+    border-block-end: 3px solid rgb(247 245 241 / 0.28);
+    background: #111;
+    color: #f7f5f1;
+  }
+
+  .shopify-section:has(.media-with-content--edge-borders) > .section-background {
+    background: #111 !important;
+  }
+
+  .media-with-content--edge-borders jumbo-text {
+    max-width: 58%;
+    margin-inline-start: auto;
+    color: #f7f5f1;
+  }
+
+  .media-with-content--edge-borders .text-block,
+  .media-with-content--edge-borders .text-block :is(p, h1, h2, h3, h4, h5, h6) {
+    color: rgb(247 245 241 / 0.82);
+  }
+
+  .media-with-content .media-block__media--video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -296,6 +333,12 @@
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
       "default": "scheme-3"
+    },
+    {
+      "type": "checkbox",
+      "id": "edge_borders",
+      "label": "Thin top and bottom borders",
+      "default": false
     },
     {
       "type": "header",

@@ -186,7 +186,7 @@
         "gap": 16,
         "section_width": "full-width",
         "section_height": "custom",
-        "section_height_custom": 70,
+        "section_height_custom": 78,
         "color_scheme": "scheme-6",
         "toggle_overlay": true,
         "overlay_color": "#00000066",
@@ -196,663 +196,6 @@
         "reflection_opacity": 75,
         "padding-block-start": 40,
         "padding-block-end": 40
-      }
-    },
-    "collection_list_jhkrdQ": {
-      "type": "collection-list",
-      "blocks": {
-        "group_33fi3c": {
-          "type": "group",
-          "name": "t:names.header",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_n7Ac3a": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<h2>Shop your vibe</h2>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "tight",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 4,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_n7Ac3a"
-          ]
-        },
-        "static-collection-card": {
-          "type": "_collection-card",
-          "name": "t:names.collection_card",
-          "static": true,
-          "settings": {
-            "placement": "on_image",
-            "horizontal_alignment": "center",
-            "vertical_alignment": "center",
-            "collection_card_gap": 0,
-            "inherit_color_scheme": false,
-            "color_scheme": "scheme-5",
-            "border": "none",
-            "border_width": 0,
-            "border_opacity": 0,
-            "border_radius": 0
-          },
-          "blocks": {
-            "collection_title_RqbYcA": {
-              "type": "collection-title",
-              "name": "t:names.collection_title",
-              "settings": {
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h5",
-                "font": "var(--font-body--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "tight",
-                "case": "uppercase",
-                "wrap": "pretty",
-                "color": "var(--color-foreground-heading)",
-                "background": true,
-                "background_color": "#0000008A",
-                "corner_radius": 0,
-                "padding-block-start": 8,
-                "padding-block-end": 8,
-                "padding-inline-start": 12,
-                "padding-inline-end": 12
-              },
-              "blocks": {}
-            },
-            "collection-card-image": {
-              "type": "_collection-card-image",
-              "name": "t:names.collection_card_image",
-              "static": true,
-              "settings": {
-                "image_ratio": "adapt",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "border": "solid",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "collection_title_RqbYcA"
-          ]
-        }
-      },
-      "block_order": [
-        "group_33fi3c"
-      ],
-      "custom_css": [],
-      "name": "t:names.collections_bento",
-      "settings": {
-        "collection_list": [
-          "woman",
-          "couple",
-          "men",
-          "corchat"
-        ],
-        "layout_type": "carousel",
-        "carousel_on_mobile": false,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 12,
-        "bento_gap": 8,
-        "rows_gap": 12,
-        "max_collections": 4,
-        "icons_style": "chevron_large",
-        "icons_shape": "circle",
-        "section_width": "page-width",
-        "gap": 20,
-        "color_scheme": "",
-        "padding-block-start": 48,
-        "padding-block-end": 24
-      }
-    },
-    "section_RfdBxn": {
-      "type": "section",
-      "blocks": {
-        "group_iiRbdG": {
-          "type": "group",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "icon_TyiNXM": {
-              "type": "icon",
-              "settings": {
-                "icon": "shirt",
-                "width": 32,
-                "link": "",
-                "open_in_new_tab": false
-              },
-              "blocks": {}
-            },
-            "group_D4RF8C": {
-              "type": "group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 4,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_ccqxLp": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<h3><strong>Soft everyday fit</strong></h3>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "h3",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_PTFTUd": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Drop shoulder cuts that feel easy from day one.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_ccqxLp",
-                "text_PTFTUd"
-              ]
-            }
-          },
-          "block_order": [
-            "icon_TyiNXM",
-            "group_D4RF8C"
-          ]
-        },
-        "group_byWQYP": {
-          "type": "group",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "icon_tJgYe9": {
-              "type": "icon",
-              "settings": {
-                "icon": "heart",
-                "width": 32,
-                "link": "",
-                "open_in_new_tab": false
-              },
-              "blocks": {}
-            },
-            "group_WmdaWw": {
-              "type": "group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 4,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_GR89De": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<h3><strong>Graphics that hit</strong></h3>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "h3",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_qeAedR": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Anime, football & couple prints, not filler designs</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_GR89De",
-                "text_qeAedR"
-              ]
-            }
-          },
-          "block_order": [
-            "icon_tJgYe9",
-            "group_WmdaWw"
-          ]
-        },
-        "group_ygEyaA": {
-          "type": "group",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "icon_tVLzJQ": {
-              "type": "icon",
-              "settings": {
-                "icon": "silhouette",
-                "width": 32,
-                "link": "",
-                "open_in_new_tab": false
-              },
-              "blocks": {}
-            },
-            "group_TxRbGh": {
-              "type": "group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 4,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_LxMpee": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<h3><strong>Ready to wear</strong></h3>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "h3",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_76brTH": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Comfort-first tees made for real life, not the rack</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_LxMpee",
-                "text_76brTH"
-              ]
-            }
-          },
-          "block_order": [
-            "icon_tVLzJQ",
-            "group_TxRbGh"
-          ]
-        }
-      },
-      "block_order": [
-        "group_iiRbdG",
-        "group_byWQYP",
-        "group_ygEyaA"
-      ],
-      "name": "t:names.icons_with_text",
-      "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 36,
-        "padding-block-end": 36
       }
     },
     "product_list_fa6P9H": {
@@ -1177,14 +520,14 @@
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h3",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
+                    "type_preset": "h4",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "clamp(1.75rem, 3vw, 2.35rem)",
+                    "line_height": "tight",
                     "letter_spacing": "tight",
                     "case": "none",
                     "wrap": "pretty",
-                    "color": "var(--color-foreground)",
+                    "color": "#f7f5f1",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -1210,7 +553,7 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "color": "var(--color-foreground)",
+                    "color": "#f7f5f1cc",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -1362,7 +705,8 @@
         "section_width": "page-width",
         "section_height": "small",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-5",
+        "edge_borders": true,
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -1619,7 +963,7 @@
             "media_type": "video",
             "image": "shopify://shop_images/akino_woman.avif",
             "link": "",
-            "video": "shopify://files/videos/9690ba75c597d9760f3d2bdd17a4f62b.mp4",
+            "asset_video": "akino-hero-2.mp4",
             "video_loop": true,
             "video_autoplay": true,
             "image_position": "contain",
@@ -1633,14 +977,14 @@
           "settings": {
             "horizontal_alignment_flex_direction_column": "flex-end",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 10
+            "gap": 14
           },
           "blocks": {
             "jumbo_text_FhQarC": {
               "type": "jumbo-text",
               "name": "t:names.jumbo_text",
               "settings": {
-                "text": "RAISE THE\nBAR",
+                "text": "HER\nERA",
                 "font": "subheading",
                 "alignment": "right",
                 "line_height": "0.8",
@@ -1655,10 +999,10 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Soft oversized tees for her</p>",
+                "text": "<p>Soft oversized drops made for campus days, late hangs, and every city fit in between.</p>",
                 "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
+                "max_width": "narrow",
+                "alignment": "right",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -1671,7 +1015,7 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 0,
-                "padding-block-end": 0,
+                "padding-block-end": 4,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -1707,7 +1051,8 @@
         "media_height": "60svh",
         "section_width": "full-width",
         "extend_media": true,
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-5",
+        "edge_borders": true,
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -2277,13 +1622,145 @@
       "settings": {
         "speed": 28
       }
+    },
+    "about_after_hero": {
+      "type": "akino-about",
+      "name": "About",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "heading": "Oversized on purpose",
+            "text": "Baggy drop-shoulder fits made for campus, hangs, and late-night runs."
+          },
+          "blocks": {}
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "heading": "Main character energy",
+            "text": "Bold anime, football, and couple drops — prints that actually turn heads."
+          },
+          "blocks": {}
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "heading": "Built for your scroll",
+            "text": "Soft tees you’ll live in — selfie-ready, COD-easy, Dhaka to doorstep."
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "settings": {
+        "eyebrow": "About",
+        "heading": "Made for city days and late nights",
+        "text": "<p>Akino is a Bangladesh-born fashion label built around soft oversized fits, bold graphics, and pieces you can actually live in. From drop-shoulder tees to couple styles, every drop is designed to stand out without trying too hard.</p>",
+        "button_label": "Shop the drop",
+        "button_link": "shopify://collections/all",
+        "color_scheme": "scheme-1",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "vibe_grid_after_about": {
+      "type": "akino-vibe-grid",
+      "name": "Shop your vibe",
+      "blocks": {
+        "vibe_1": {
+          "type": "vibe",
+          "settings": {
+            "label": "For Her",
+            "detail": "Soft oversized fits made for everyday city looks.",
+            "link": "shopify://collections/woman",
+            "icon": "lipstick",
+            "media_type": "video"
+          },
+          "blocks": {}
+        },
+        "vibe_2": {
+          "type": "vibe",
+          "settings": {
+            "label": "Couple Sets",
+            "detail": "Matching drops for you and your person.",
+            "link": "shopify://collections/couple",
+            "icon": "heart",
+            "media_type": "video"
+          },
+          "blocks": {}
+        },
+        "vibe_3": {
+          "type": "vibe",
+          "settings": {
+            "label": "For Him",
+            "detail": "Clean baggy fits with statement graphics.",
+            "link": "shopify://collections/men",
+            "icon": "shirt",
+            "media_type": "image"
+          },
+          "blocks": {}
+        },
+        "vibe_4": {
+          "type": "vibe",
+          "settings": {
+            "label": "Anime",
+            "detail": "Bold prints that actually turn heads.",
+            "link": "shopify://collections/anime",
+            "icon": "eye",
+            "media_type": "video"
+          },
+          "blocks": {}
+        },
+        "vibe_5": {
+          "type": "vibe",
+          "settings": {
+            "label": "Designer Collection",
+            "detail": "Limited edits for when you want to stand out.",
+            "link": "shopify://collections/designer",
+            "icon": "price_tag",
+            "media_type": "image"
+          },
+          "blocks": {}
+        },
+        "vibe_6": {
+          "type": "vibe",
+          "settings": {
+            "label": "Corchat",
+            "detail": "Cute handmade Corchat pieces to finish the fit.",
+            "link": "shopify://collections/corchat",
+            "icon": "paw_print",
+            "media_type": "image"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "vibe_1",
+        "vibe_2",
+        "vibe_3",
+        "vibe_4",
+        "vibe_5",
+        "vibe_6"
+      ],
+      "settings": {
+        "heading": "Shop your vibe",
+        "support": "Pick a lane and jump in",
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "message_bar_after_hero",
-    "collection_list_jhkrdQ",
-    "section_RfdBxn",
+    "about_after_hero",
+    "vibe_grid_after_about",
     "product_list_fa6P9H",
     "media_with_content_CGcdaR",
     "product_list_rNbirg",

@@ -186,23 +186,30 @@
             data-testid: 'hero-desktop-video-1'
         }}
       {%- elsif media_1_asset != blank -%}
-        <video
-          class="hero__media hero__media--asset-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          webkit-playsinline
-          preload="auto"
-          disablepictureinpicture
+        <div
+          class="hero__asset-playlist"
+          data-akino-hero-playlist
           aria-label="{{ shop.name }}"
-          data-testid="hero-desktop-video-1"
         >
-          <source
-            src="{{ media_1_asset | asset_url }}"
-            type="video/mp4"
-          >
-        </video>
+          {%- assign akino_hero_videos = 'akino-hero.mp4,akino-hero-2.mp4,akino-hero-3.mp4' | split: ',' -%}
+          {%- for hero_video_file in akino_hero_videos -%}
+            <video
+              class="hero__media hero__media--asset-video{% if forloop.first %} is-active{% endif %}"
+              {% if forloop.first %}autoplay{% endif %}
+              muted
+              playsinline
+              webkit-playsinline
+              preload="auto"
+              disablepictureinpicture
+              data-testid="hero-desktop-video-{{ forloop.index }}"
+            >
+              <source
+                src="{{ hero_video_file | asset_url }}"
+                type="video/mp4"
+              >
+            </video>
+          {%- endfor -%}
+        </div>
       {%- endif -%}
     </div>
   {%- endif -%}
@@ -571,20 +578,108 @@
     const root = document.getElementById('Hero-{{ section.id }}');
     if (!root) return;
 
+    const prepareVideo = (video) => {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute('muted', '');
+      video.playsInline = true;
+      video.setAttribute('playsinline', '');
+      video.preload = 'auto';
+    };
+
+    const safePlay = (video) => {
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    };
+
+    const warmVideo = (video) => {
+      // Force the browser to start buffering/decoding ahead of time.
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.then === 'function') {
+        playPromise
+          .then(() => {
+            video.pause();
+            if (video.currentTime > 0.05) video.currentTime = 0;
+          })
+          .catch(() => {});
+      }
+    };
+
+    const setupPlaylist = (playlist) => {
+      if (playlist.dataset.akinoPlaylistReady === 'true') return;
+
+      const videos = Array.from(playlist.querySelectorAll('video'));
+      if (!videos.length) return;
+
+      playlist.dataset.akinoPlaylistReady = 'true';
+      let index = Math.max(
+        0,
+        videos.findIndex((video) => video.classList.contains('is-active'))
+      );
+      let switching = false;
+
+      videos.forEach((video, i) => {
+        prepareVideo(video);
+        video.loop = videos.length === 1;
+        video.classList.toggle('is-active', i === index);
+        if (i !== index) warmVideo(video);
+      });
+
+      const showIndex = (nextIndex) => {
+        if (switching || videos.length < 2) return;
+        switching = true;
+
+        const current = videos[index];
+        index = ((nextIndex % videos.length) + videos.length) % videos.length;
+        const next = videos[index];
+
+        next.currentTime = 0;
+        safePlay(next);
+        next.classList.add('is-active');
+        current.classList.remove('is-active');
+        current.pause();
+
+        // Re-warm the clip after the next one so the following swap stays instant.
+        const upcoming = videos[(index + 1) % videos.length];
+        if (upcoming !== next) warmVideo(upcoming);
+
+        requestAnimationFrame(() => {
+          switching = false;
+        });
+      };
+
+      videos.forEach((video, i) => {
+        video.addEventListener('ended', () => {
+          if (i === index) showIndex(index + 1);
+        });
+
+        // Start the next clip slightly early so there's no black gap.
+        video.addEventListener('timeupdate', () => {
+          if (i !== index || switching || !video.duration) return;
+          if (video.duration - video.currentTime <= 0.2) {
+            showIndex(index + 1);
+          }
+        });
+      });
+
+      safePlay(videos[index]);
+    };
+
     const playVideos = () => {
+      root.querySelectorAll('[data-akino-hero-playlist]').forEach(setupPlaylist);
+
       root.querySelectorAll('video').forEach((video) => {
-        video.muted = true;
-        video.defaultMuted = true;
-        video.setAttribute('muted', '');
-        video.playsInline = true;
-        video.setAttribute('playsinline', '');
+        if (video.closest('[data-akino-hero-playlist]')) return;
+        prepareVideo(video);
         video.loop = true;
         video.autoplay = true;
-        const playPromise = video.play();
-        if (playPromise && typeof playPromise.catch === 'function') {
-          playPromise.catch(() => {});
-        }
+        safePlay(video);
       });
+
+      // Resume the active playlist clip after tab focus / back-forward cache.
+      root.querySelectorAll('[data-akino-hero-playlist] video.is-active').forEach(safePlay);
     };
 
     playVideos();
@@ -705,13 +800,36 @@
     --button-border-color: #fff;
   }
 
+  .hero__asset-playlist {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .hero__media--asset-video {
     pointer-events: none;
   }
 
+  .hero__asset-playlist .hero__media--asset-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+  }
+
+  .hero__asset-playlist .hero__media--asset-video.is-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+  }
+
   @media screen and (max-width: 749px) {
     .hero {
-      --hero-min-height: 62svh !important;
+      --hero-min-height: 70svh !important;
     }
 
     .hero .button,

@@ -62,12 +62,36 @@
       {{ image_tag }}
     {% endif %}
   {%- elsif show_video -%}
-    {% render 'video',
-      video: block_settings.video,
-      video_autoplay: block_settings.video_autoplay,
-      video_loop: block_settings.video_loop,
-      video_class: 'media-block__media media-block__media--video border-style'
-    %}
+    {%- if block_settings.video != blank -%}
+      {% render 'video',
+        video: block_settings.video,
+        video_autoplay: block_settings.video_autoplay,
+        video_loop: block_settings.video_loop,
+        video_class: 'media-block__media media-block__media--video border-style'
+      %}
+    {%- elsif block_settings.asset_video != blank -%}
+      <video
+        class="media-block__media media-block__media--video border-style"
+        {% if block_settings.video_autoplay %}
+          autoplay
+          muted
+          playsinline
+        {% endif %}
+        {% if block_settings.video_loop %}
+          loop
+        {% endif %}
+        preload="metadata"
+      >
+        <source
+          src="{{ block_settings.asset_video | asset_url }}"
+          type="video/mp4"
+        >
+      </video>
+    {%- else -%}
+      <div class="media-block__media border-style">
+        {{ 'hero-apparel-3' | placeholder_svg_tag }}
+      </div>
+    {%- endif -%}
   {%- else -%}
     <div class="media-block__media border-style">
       {{ 'hero-apparel-3' | placeholder_svg_tag }}

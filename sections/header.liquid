@@ -1127,9 +1127,20 @@
   }
 
   #header-component .header-logo,
+  #header-component .header-logo__image-container {
+    background: transparent;
+  }
+
+  #header-component .header-logo,
   #header-component .header-logo img,
   #header-component .header-logo__image {
     max-height: var(--header-logo-height, 64px);
+  }
+
+  /* Knock out white/solid screenshot background in the logo PNG */
+  #header-component .header-logo__image {
+    mix-blend-mode: multiply;
+    background: transparent;
   }
 
   #header-component .header-menu .menu-list {
