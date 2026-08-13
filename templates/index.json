@@ -16,7 +16,7 @@
           "type": "text",
           "name": "Eyebrow",
           "settings": {
-            "text": "<p>Bangladesh delivery · COD available</p>",
+            "text": "<p>Bangladesh delivery · COD · Dhaka ৳80 / Outside ৳120</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "center",
@@ -68,7 +68,7 @@
           "type": "text",
           "name": "Support",
           "settings": {
-            "text": "<p>Statement pieces for everyday city style. Soft oversized fits, bold graphics, and drops made to stand out — with free delivery on orders over ৳1500.</p>",
+            "text": "<p>Statement pieces for everyday city style. Soft oversized fits, bold graphics, and drops made to stand out — Cash on Delivery only (Dhaka ৳80, Outside ৳120).</p>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "center",
@@ -213,13 +213,13 @@
         "m1": {
           "type": "message",
           "settings": {
-            "text": "Free delivery on orders over ৳1500"
+            "text": "COD: Dhaka ৳80 · Outside ৳120"
           }
         },
         "m2": {
           "type": "message",
           "settings": {
-            "text": "Cash on delivery available nationwide"
+            "text": "COD only · Dhaka ৳80 · Outside ৳120"
           }
         },
         "m3": {
@@ -1513,7 +1513,7 @@
             "accordion_row_qbnypt": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Do you offer Cash on Delivery (COD)?",
+                "heading": "What payment methods do you accept?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1522,7 +1522,7 @@
                 "text_4Wa7aF": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Yes. AKINO offers Cash on Delivery (COD) across Bangladesh. You can also pay with bKash, Nagad, Rocket, Visa, or bank transfer after we confirm your order.</p>",
+                    "text": "<p>Yes. AKINO only accepts <strong>Cash on Delivery (COD)</strong> across Bangladesh. Delivery charge is <strong>৳80 inside Dhaka</strong> and <strong>৳120 outside Dhaka</strong>.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
