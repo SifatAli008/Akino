@@ -89,33 +89,10 @@
                 <span class="variant-option__swatch-value">{{ product_option.selected_value }}</span>
               {%- endif %}
             </legend>
-            {%- liquid
-              assign force_select_first_size = false
-              if request.page_type == 'product' and option_name_down contains 'size'
-                assign selected_size_down = product_option.selected_value | downcase | strip
-                if selected_size_down == 's'
-                  assign force_select_first_size = true
-                endif
-              endif
-              assign size_fallback_applied = false
-            -%}
             {%- for product_option_value in product_option.values -%}
               {% liquid
-                assign option_value_down = product_option_value | downcase | strip
-                assign skip_size_s = false
-                if request.page_type == 'product' and option_name_down contains 'size' and option_value_down == 's'
-                  assign skip_size_s = true
-                endif
-              %}
-              {% if skip_size_s %}
-                {% continue %}
-              {% endif %}
-              {% liquid
                 assign mark_checked = false
-                if force_select_first_size and size_fallback_applied == false
-                  assign mark_checked = true
-                  assign size_fallback_applied = true
-                elsif force_select_first_size == false and product_option_value.selected
+                if product_option_value.selected
                   assign mark_checked = true
                 endif
               %}
@@ -265,17 +242,6 @@
                 class="variant-option__select"
               >
                 {%- for product_option_value in product_option.values -%}
-                  {% liquid
-                    assign option_name_down = product_option.name | downcase
-                    assign option_value_down = product_option_value | downcase | strip
-                    assign skip_size_s = false
-                    if request.page_type == 'product' and option_name_down contains 'size' and option_value_down == 's'
-                      assign skip_size_s = true
-                    endif
-                  %}
-                  {% if skip_size_s %}
-                    {% continue %}
-                  {% endif %}
                   <option
                     value="{{ product_option_value | escape }}"
                     data-input-id="{{ product_option.position }}-{{ forloop.index0 }}"
