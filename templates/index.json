@@ -540,7 +540,7 @@
       },
       "name": "Featured collection",
       "settings": {
-        "collection": "all",
+        "collection": "woman",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
