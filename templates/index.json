@@ -1123,7 +1123,7 @@
           "name": "t:names.comparison_slider",
           "settings": {
             "before_image": "shopify://shop_images/akino-fight-club-1.png",
-            "after_image": "shopify://shop_images/akino-grafity-1.png",
+            "after_image": "shopify://shop_images/akino-solid-black-3.jpg",
             "slider_style": "horizontal",
             "show_text": false,
             "before_text": "",
