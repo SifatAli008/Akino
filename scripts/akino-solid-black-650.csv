@@ -1,0 +1,9 @@
+Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Variant SKU,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Requires Shipping,Variant Taxable,Image Src,Image Position,Image Alt Text,Status
+akino-solid-black,AKINO Solid Black Oversized Tee,"<p>AKINO Solid Black Oversized Tee</p><ul><li>Terry cotton</li><li>Color options: Black - 220 GSM / Dark Ash - 180 GSM</li><li>Sizes: Black (M, XL) / Dark Ash (M, L, XL)</li><li>Oversized drop-shoulder fit</li></ul>",AKINO,Drop Shoulder Tee,"terry,drop-shoulder,streetwear,solid",TRUE,Color,Black - 220 GSM,Size,M,akino-solid-black-blk-m,shopify,10,deny,manual,550.00,TRUE,TRUE,https://res.cloudinary.com/hua42kke/image/upload/v1786682549/akino/ready/akino-solid-black-1.jpg,1,AKINO Solid Black Oversized Tee,active
+akino-solid-black,,,,,,,,Black - 220 GSM,,XL,akino-solid-black-blk-xl,shopify,10,deny,manual,550.00,TRUE,TRUE,,,,
+akino-solid-black,,,,,,,,Dark Ash - 180 GSM,,M,akino-solid-black-ash-m,shopify,10,deny,manual,550.00,TRUE,TRUE,,,,
+akino-solid-black,,,,,,,,Dark Ash - 180 GSM,,L,akino-solid-black-ash-l,shopify,10,deny,manual,550.00,TRUE,TRUE,,,,
+akino-solid-black,,,,,,,,Dark Ash - 180 GSM,,XL,akino-solid-black-ash-xl,shopify,10,deny,manual,550.00,TRUE,TRUE,,,,
+akino-solid-black,,,,,,,,,,,,,,,,,,,https://res.cloudinary.com/hua42kke/image/upload/v1786682550/akino/ready/akino-solid-black-2.jpg,2,AKINO Solid Black Oversized Tee,
+akino-solid-black,,,,,,,,,,,,,,,,,,,https://res.cloudinary.com/hua42kke/image/upload/v1786682550/akino/ready/akino-solid-black-3.jpg,3,AKINO Solid Black Oversized Tee,
+akino-solid-black,,,,,,,,,,,,,,,,,,,https://res.cloudinary.com/hua42kke/image/upload/v1786682551/akino/ready/akino-solid-black-4.jpg,4,AKINO Solid Black Oversized Tee,

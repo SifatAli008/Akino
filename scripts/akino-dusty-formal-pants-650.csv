@@ -1,0 +1,7 @@
+Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Variant SKU,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Requires Shipping,Variant Taxable,Image Src,Image Position,Image Alt Text,Status
+akino-dusty-formal-pants,AKINO Dusty Formal Pants,"<p>AKINO Dusty Formal Pants</p><ul><li>Premium Chinese Cherry fabric</li><li>Lightweight, breathable, and effortlessly stylish</li><li>Color: Dusty</li><li>Sizes: S, M, L, XL</li><li>Wide-leg formal fit with elastic waist</li></ul>",AKINO,Formal Pants,"formal,pants,dusty,cherry-fabric,streetwear",TRUE,Color,Dusty,Size,S,akino-dusty-pants-s,shopify,10,deny,manual,700.00,TRUE,TRUE,https://res.cloudinary.com/hua42kke/image/upload/v1786682720/akino/ready/akino-dusty-formal-pants-1.jpg,1,AKINO Dusty Formal Pants,active
+akino-dusty-formal-pants,,,,,,,,Dusty,,M,akino-dusty-pants-m,shopify,10,deny,manual,700.00,TRUE,TRUE,,,,
+akino-dusty-formal-pants,,,,,,,,Dusty,,L,akino-dusty-pants-l,shopify,10,deny,manual,700.00,TRUE,TRUE,,,,
+akino-dusty-formal-pants,,,,,,,,Dusty,,XL,akino-dusty-pants-xl,shopify,10,deny,manual,700.00,TRUE,TRUE,,,,
+akino-dusty-formal-pants,,,,,,,,,,,,,,,,,,,https://res.cloudinary.com/hua42kke/image/upload/v1786682721/akino/ready/akino-dusty-formal-pants-2.jpg,2,AKINO Dusty Formal Pants,
+akino-dusty-formal-pants,,,,,,,,,,,,,,,,,,,https://res.cloudinary.com/hua42kke/image/upload/v1786682721/akino/ready/akino-dusty-formal-pants-3.jpg,3,AKINO Dusty Formal Pants,
